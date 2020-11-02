@@ -20,7 +20,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
-
+app.use(function (req, res, next) {
+   res.locals = {
+     title: 'On-line Университет развития личности',
+   };
+   next();
+});
 app.use('/product/', productRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
