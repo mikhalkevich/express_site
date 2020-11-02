@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .nav
+      a(href='/') Главная
+      a(href='/services') Услуги
+      a(href='/product/all') Товары
+      a(href='/portfolio') Портфолио
+      a(href='/contact') Контакты
+    block content
